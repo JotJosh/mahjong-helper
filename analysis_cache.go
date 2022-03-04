@@ -46,7 +46,7 @@ type roundAnalysisCache struct {
 
 func (rc *roundAnalysisCache) print() {
 	const (
-		baseInfo  = "助手正在计算推荐舍牌，请稍等……（计算结果仅供参考）"
+		baseInfo  = "The assistant is calculating the recommended handout, please wait... (calculation result is for reference only)"
 		emptyInfo = "--"
 		sep       = "  "
 	)

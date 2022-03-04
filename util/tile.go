@@ -21,9 +21,9 @@ var MahjongU = [...]string{
 }
 
 var MahjongZH = [...]string{
-	"1万", "2万", "3万", "4万", "5万", "6万", "7万", "8万", "9万",
-	"1饼", "2饼", "3饼", "4饼", "5饼", "6饼", "7饼", "8饼", "9饼",
-	"1索", "2索", "3索", "4索", "5索", "6索", "7索", "8索", "9索",
+	"1m", "2m", "3m", "4m", "5m", "6m", "7m", "8m", "9m",
+	"1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p",
+	"1s", "2s", "3s", "4s", "5s", "6s", "7s", "8s", "9s",
 	"东", "南", "西", "北", "白", "发", "中",
 }
 
@@ -123,7 +123,7 @@ func (w Waits) tilesZH() []string {
 }
 
 func (w Waits) String() string {
-	return fmt.Sprintf("%d 进张 %s", w.AllCount(), TilesToStrWithBracket(w.indexes()))
+	return fmt.Sprintf("%d Waits %s", w.AllCount(), TilesToStrWithBracket(w.indexes()))
 }
 
 func (w Waits) Equals(w1 Waits) bool {
@@ -230,7 +230,7 @@ func OutsideTiles(tile int) (outsideTiles []int) {
 			outsideTiles = append(outsideTiles, i)
 		}
 	default:
-		panic(fmt.Errorf("[OutsideTiles] 代码有误: tile = %d", tile))
+		panic(fmt.Errorf("[OutsideTiles] Error code: tile = %d", tile))
 	}
 	return
 }

@@ -3,12 +3,13 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/EndlessCheng/mahjong-helper/util"
-	"github.com/EndlessCheng/mahjong-helper/util/model"
-	"github.com/fatih/color"
 	"math/rand"
 	"strings"
 	"time"
+
+	"github.com/EndlessCheng/mahjong-helper/util"
+	"github.com/EndlessCheng/mahjong-helper/util/model"
+	"github.com/fatih/color"
 )
 
 var (
@@ -78,9 +79,9 @@ const issueCommonQuestions = "https://github.com/EndlessCheng/mahjong-helper/iss
 const qqGroupNum = "375865038"
 
 func welcome() int {
-	fmt.Println("使用说明：" + readmeURL)
-	fmt.Println("问题反馈：" + issueURL)
-	fmt.Println("吐槽群：" + qqGroupNum)
+	fmt.Println("Instructions：" + readmeURL)
+	fmt.Println("Feedback：" + issueURL)
+	fmt.Println("QQ group id:" + qqGroupNum)
 	fmt.Println()
 
 	fmt.Println("请输入数字，选择对应网站：")
@@ -124,7 +125,7 @@ func welcome() int {
 func main() {
 	flag.Parse()
 
-	color.HiGreen("日本麻将助手 %s (by EndlessCheng)", version)
+	color.HiGreen("Riichi Mahjong Analyzer %s (by EndlessCheng)", version)
 	if version != versionDev {
 		go checkNewVersion(version)
 	}
