@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/EndlessCheng/mahjong-helper/util"
 	"fmt"
 	"strings"
-	"github.com/fatih/color"
+
+	"github.com/EndlessCheng/mahjong-helper/util"
 	"github.com/EndlessCheng/mahjong-helper/util/model"
+	"github.com/fatih/color"
 )
 
 func simpleBestDiscardTile(playerInfo *model.PlayerInfo) int {
@@ -55,7 +56,7 @@ func analysisPlayerWithRisk(playerInfo *model.PlayerInfo, mixedRiskTable riskTab
 	switch countOfTiles % 3 {
 	case 1:
 		result := util.CalculateShantenWithImproves13(playerInfo)
-		fmt.Println("当前" + util.NumberToChineseShanten(result.Shanten) + "：")
+		fmt.Println("Currently " + util.NumberToChineseShanten(result.Shanten) + "：")
 		r := &analysisResult{
 			discardTile34:  -1,
 			result13:       result,
@@ -73,7 +74,7 @@ func analysisPlayerWithRisk(playerInfo *model.PlayerInfo, mixedRiskTable riskTab
 			if len(results14) > 0 {
 				r13 := results14[0].Result13
 				if r13.RiichiPoint > 0 && r13.FuritenRate == 0 && r13.DamaPoint >= 5200 && r13.DamaWaits.AllCount() == r13.Waits.AllCount() {
-					color.HiGreen("默听打点充足：追求和率默听，追求打点立直")
+					color.HiGreen("Dama preferred (默听打点充足：追求和率默听，追求打点立直)")
 				}
 				// 局收支相近时，提示：局收支相近，追求和率打xx，追求打点打xx
 			}
@@ -126,7 +127,7 @@ func analysisMeld(playerInfo *model.PlayerInfo, targetTile34 int, isRedFive bool
 	fmt.Println(strings.Repeat("=", len(handsTobeNaki)))
 
 	// 原始手牌分析结果
-	fmt.Println("当前" + util.NumberToChineseShanten(result.Shanten) + "：")
+	fmt.Println("Currently " + util.NumberToChineseShanten(result.Shanten) + "：")
 	r := &analysisResult{
 		discardTile34:  -1,
 		result13:       result,

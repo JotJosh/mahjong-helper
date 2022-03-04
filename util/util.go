@@ -51,7 +51,9 @@ func InStrings(e string, arr []string) bool {
 }
 
 // 258m 258p 258s 12345z 在不考虑国士无双和七对子时为八向听
-var chineseShanten = []string{"和了", "听牌", "一向听", "两向听", "三向听", "四向听", "五向听", "六向听", "七向听", "八向听"}
+// var chineseShanten = []string{"和了", "听牌", "一向听", "两向听", "三向听", "四向听", "五向听", "六向听", "七向听", "八向听"}
+
+var chineseShanten = []string{"WIN", "Tempai", "1 away", "2 away", "3 away", "4 away", "5 away", "6 away", "7 away", "8 away"}
 
 // -1=和了，0=和牌，1=一向听，……
 func NumberToChineseShanten(num int) string {

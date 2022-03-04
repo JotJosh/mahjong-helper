@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/EndlessCheng/mahjong-helper/util"
 	"github.com/EndlessCheng/mahjong-helper/util/model"
 	"github.com/fatih/color"
@@ -230,10 +231,10 @@ func newRoundData(parser DataParser, roundNumber int, benNumber int, dealer int)
 		leftCounts:         util.InitLeftTiles34(),
 		globalDiscardTiles: []int{},
 		players: []*playerInfo{
-			newPlayerInfo("自家", playerWindTile[0]),
-			newPlayerInfo("下家", playerWindTile[1]),
-			newPlayerInfo("对家", playerWindTile[2]),
-			newPlayerInfo("上家", playerWindTile[3]),
+			newPlayerInfo("Myself    ", playerWindTile[0]),
+			newPlayerInfo("R-Shimocha", playerWindTile[1]),
+			newPlayerInfo("M-Toimen  ", playerWindTile[2]),
+			newPlayerInfo("L-Kamicha ", playerWindTile[3]),
 		},
 	}
 }
@@ -268,7 +269,7 @@ func (d *roundData) newGame() {
 func (d *roundData) descLeftCounts(tile int) {
 	d.leftCounts[tile]--
 	if d.leftCounts[tile] < 0 {
-		info := fmt.Sprintf("数据异常: %s 数量为 %d", util.MahjongZH[tile], d.leftCounts[tile])
+		info := fmt.Sprintf("Abnormal data: %s the value is %d", util.MahjongZH[tile], d.leftCounts[tile])
 		if debugMode {
 			panic(info)
 		} else {
@@ -286,7 +287,7 @@ func (d *roundData) newDora(kanDoraIndicator int) {
 		return
 	}
 
-	color.Yellow("杠宝牌指示牌是 %s", util.MahjongZH[kanDoraIndicator])
+	color.Yellow("The new dora indicator is %s", util.MahjongZH[kanDoraIndicator])
 }
 
 // 根据宝牌指示牌计算出宝牌
@@ -574,12 +575,12 @@ func (d *roundData) analysis() error {
 		}
 
 		color.New(color.FgHiGreen).Printf("%s", util.MahjongZH[d.roundWindTile])
-		fmt.Printf("%d局开始，自风为", roundNumber%4+1)
+		fmt.Printf("%d is round wind (局开始，自风为)", roundNumber%4+1)
 		color.New(color.FgHiGreen).Printf("%s", util.MahjongZH[d.players[0].selfWindTile])
 		fmt.Println()
 		info := fmt.Sprintln(util.TilesToMahjongZHInterface(d.doraIndicators)...)
 		info = info[:len(info)-1]
-		color.HiYellow("宝牌指示牌是 " + info)
+		color.HiYellow("Dora is (宝牌指示牌是) " + info)
 		fmt.Println()
 		// TODO: 显示地和概率
 		return analysisPlayerWithRisk(playerInfo, nil)
@@ -912,7 +913,7 @@ func (d *roundData) analysis() error {
 		if !debugMode {
 			clearConsole()
 		}
-		fmt.Println("和牌，本局结束")
+		fmt.Println("Hand over")
 		whos, points := d.parser.ParseRoundWin()
 		if len(whos) == 3 {
 			color.HiYellow("凤 凰 级 避 铳")

@@ -32,8 +32,8 @@ const (
 	YakuPinfu
 	YakuRyanpeikou
 	YakuIipeikou
-	YakuSanshokuDoujun  // *
-	YakuIttsuu          // *
+	YakuSanshokuDoujun // *
+	YakuIttsuu         // *
 
 	// Yaku based on triplets and/or quads
 	YakuToitoi
@@ -44,14 +44,14 @@ const (
 	// Yaku based on terminal or honor tiles
 	YakuTanyao
 	YakuYakuhai
-	YakuChanta     // * 必须有顺子
-	YakuJunchan    // * 必须有顺子
-	YakuHonroutou  // 七对也算
+	YakuChanta    // * 必须有顺子
+	YakuJunchan   // * 必须有顺子
+	YakuHonroutou // 七对也算
 	YakuShousangen
 
 	// Yaku based on suits
-	YakuHonitsu   // *
-	YakuChinitsu  // *
+	YakuHonitsu  // *
+	YakuChinitsu // *
 
 	// Yakuman
 	//YakuKokushi
@@ -89,57 +89,57 @@ const (
 
 var YakuNameMap = map[int]string{
 	// Special criteria
-	YakuRiichi:  "立直",
-	YakuChiitoi: "七对",
+	YakuRiichi:  "Riichi",
+	YakuChiitoi: "Chiitoi",
 
 	// Yaku based on luck
-	YakuTsumo: "自摸",
+	YakuTsumo: "Tsumo",
 	//YakuIppatsu: "一发",
 	//YakuHaitei:  "海底",
 	//YakuHoutei:  "河底",
 	//YakuRinshan: "岭上",
 	//YakuChankan: "抢杠",
-	YakuDaburii: "w立",
+	YakuDaburii: "Daburii",
 
 	// Yaku based on sequences
-	YakuPinfu:          "平和",
-	YakuRyanpeikou:     "两杯口",
-	YakuIipeikou:       "一杯口",
-	YakuSanshokuDoujun: "三色",
-	YakuIttsuu:         "一通", // 一气
+	YakuPinfu:          "Pinfu",
+	YakuRyanpeikou:     "Ryanpeikou (2x 2 seq)",
+	YakuIipeikou:       "Iipeikou (2 seq)",
+	YakuSanshokuDoujun: "Sanshoku",
+	YakuIttsuu:         "Ittsuu (straight)", // 一气
 
 	// Yaku based on triplets and/or quads
-	YakuToitoi:         "对对",
-	YakuSanAnkou:       "三暗刻",
-	YakuSanshokuDoukou: "三色同刻",
-	YakuSanKantsu:      "三杠子",
+	YakuToitoi:         "Toitoi",
+	YakuSanAnkou:       "SanAnkou (3c trips)",
+	YakuSanshokuDoukou: "SanshokuDoukou (3 trips)",
+	YakuSanKantsu:      "SanKantsu (3 kan)",
 
 	// Yaku based on terminal or honor tiles
-	YakuTanyao:     "断幺",
-	YakuYakuhai:    "役牌",
-	YakuChanta:     "混全",
-	YakuJunchan:    "纯全",
-	YakuHonroutou:  "混老头", // 七对也算
+	YakuTanyao:     "Tanyao",
+	YakuYakuhai:    "Yakuhai",
+	YakuChanta:     "Chanta (pure outside)",
+	YakuJunchan:    "Junchan (mixed outside)",
+	YakuHonroutou:  "Honroutou (pure terminal)", // 七对也算
 	YakuShousangen: "小三元",
 
 	// Yaku based on suits
-	YakuHonitsu:  "混一色",
-	YakuChinitsu: "清一色",
+	YakuHonitsu:  "Honitsu",
+	YakuChinitsu: "Chinitsu (flush)",
 
 	// Yakuman
 	//YakuKokushi:       "国士",
 	//YakuKokushi13:     "国士十三面",
-	YakuSuuAnkou:      "四暗刻",
-	YakuSuuAnkouTanki: "四暗刻单骑",
-	YakuDaisangen:     "大三元",
-	YakuShousuushii:   "小四喜",
-	YakuDaisuushii:    "大四喜",
-	YakuTsuuiisou:     "字一色",
-	YakuChinroutou:    "清老头",
-	YakuRyuuiisou:     "绿一色",
-	YakuChuuren:       "九莲",
-	YakuChuuren9:      "纯正九莲",
-	YakuSuuKantsu:     "四杠子",
+	YakuSuuAnkou:      "SuuAnkou (4c trips)",
+	YakuSuuAnkouTanki: "SuuAnkouTanki (4 trips 1 wait)",
+	YakuDaisangen:     "Daisangen (Big 3 drag)",
+	YakuShousuushii:   "Shousuushii (Lil 3 drag)",
+	YakuDaisuushii:    "Daisuushii (Big 4 wind)",
+	YakuTsuuiisou:     "Tsuiiisou (Lil 4 wind)",
+	YakuChinroutou:    "Chinroutou (All terminal)",
+	YakuRyuuiisou:     "Ryuuiisou (GREEN)",
+	YakuChuuren:       "Chuuren (9 gates)",
+	YakuChuuren9:      "Chuuren (9 gates & waits)",
+	YakuSuuKantsu:     "SuuKantsu (4 kans)",
 	//YakuTenhou:        "天和",
 	//YakuChiihou:       "地和",
 }
